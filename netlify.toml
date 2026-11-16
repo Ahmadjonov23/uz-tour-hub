@@ -1,6 +1,7 @@
 # Uzbek Tour Hub — Netlify sozlamalari
 # Sayt tayyor (build qilingan) fayllardan iborat, shuning uchun build buyrug'i yo'q.
 [build]
+  base = "uzbek-tour-hub-v7 2"
   publish = "public"
   command = ""
 

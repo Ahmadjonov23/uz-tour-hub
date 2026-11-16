@@ -20,7 +20,7 @@ netlify/functions/
   maps-config.mjs          — GET  /api/maps-config → Google Maps brauzer kaliti
 netlify/lib/               — umumiy kod: auth, store (Blobs), telegram, booking (Demand API mijozi)
 package.json               — funksiyalar uchun bog'liqlik (@netlify/blobs)
-netlify.toml               — Netlify sozlamalari
+../netlify.toml            — repozitoriy ildizidagi Netlify sozlamalari
 .env.example               — kerakli muhit o'zgaruvchilari
 ```
 
@@ -30,9 +30,9 @@ netlify.toml               — Netlify sozlamalari
 > backend ishlashi uchun Git yoki Netlify CLI orqali joylang.
 
 **Variant A — GitHub orqali (tavsiya etiladi)**
-1. Shu papkani GitHub repozitoriyga yuklang.
+1. Repozitoriy ildizidagi `netlify.toml` va `uzbek-tour-hub-v7 2/` papkasini birga GitHub repozitoriyga yuklang.
 2. Netlify → *Add new site → Import an existing project* → repozitoriyni tanlang.
-   Build sozlamalari `netlify.toml` dan avtomatik olinadi.
+   Build sozlamalari repozitoriy ildizidagi `netlify.toml` dan avtomatik olinadi: asosiy papka `uzbek-tour-hub-v7 2`, sayt fayllari `public`. Tayyor fayllar ishlatilgani uchun build buyrug‘i kerak emas.
 3. *Site configuration → Environment variables* ga `.env.example` dagi qiymatlarni kiriting.
 4. *Deploys → Trigger deploy*.
 
