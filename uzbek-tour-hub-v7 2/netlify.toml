@@ -1,0 +1,35 @@
+# Uzbek Tour Hub — Netlify sozlamalari
+# Sayt tayyor (build qilingan) fayllardan iborat, shuning uchun build buyrug'i yo'q.
+[build]
+  publish = "public"
+  command = ""
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Funksiyalar o'z yo'llarini (config.path) o'zi e'lon qiladi: /api/chat, /api/booking, /api/maps-config
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "geolocation=(self), camera=(), microphone=()"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/assets/index-*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# SPA: noma'lum yo'llar index.html'ga (API yo'llari funksiyalarga avvalroq tushadi)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
